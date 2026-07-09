@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Quản trị StudyNotes</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+
+    <div class="container">
+
+        <a
+            href="index.html"
+            class="navbar-brand">
+
+            📚 StudyNotes Admin
+
+        </a>
+
+    </div>
+
+</nav>
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-lg-4">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h4>
+
+                        Thông tin tài liệu
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <input
+                        type="hidden"
+                        id="id">
+                        <input type="hidden" id="views">
+                        <input type="hidden" id="favorite">
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            Tên tài liệu
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            Môn học
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            Năm học
+
+                        </label>
+
+                        <input
+                            type="number"
+                            id="year"
+                            class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            Mô tả
+
+                        </label>
+
+                        <textarea
+                            id="description"
+                            class="form-control"
+                            rows="4">
+
+                        </textarea>
+
+                    </div>
+                                        <div class="mb-3">
+
+                        <label>
+
+                            Ảnh tài liệu
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="image"
+                            class="form-control"
+                            accept="image/*">
+
+                        <img
+                            id="previewImage"
+                            class="img-thumbnail mt-3"
+                            style="display:none;max-width:220px;">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            File PDF
+
+                        </label>
+
+                        <input
+                            type="file"
+                            id="pdfFile"
+                            class="form-control"
+                            accept=".pdf">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>
+
+                            Link PDF (MockAPI)
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fileUrl"
+                            class="form-control"
+                            placeholder="Sẽ tự động điền hoặc nhập URL">
+
+                    </div>
+
+                    <div class="d-grid gap-2">
+
+                        <button
+                            id="btnSave"
+                            class="btn btn-success">
+
+                            <i class="bi bi-floppy"></i>
+
+                            Lưu tài liệu
+
+                        </button>
+
+                        <button
+                            id="btnReset"
+                            class="btn btn-secondary">
+
+                            <i class="bi bi-arrow-clockwise"></i>
+
+                            Làm mới
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+                <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-dark text-white">
+
+                    <h4>
+
+                        Danh sách tài liệu
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="table-responsive">
+
+                        <table
+                            class="table table-bordered table-hover align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th width="60">
+
+                                        ID
+
+                                    </th>
+
+                                    <th width="90">
+
+                                        Ảnh
+
+                                    </th>
+
+                                    <th>
+
+                                        Tên tài liệu
+
+                                    </th>
+
+                                    <th>
+
+                                        Môn
+
+                                    </th>
+
+                                    <th width="90">
+
+                                        Năm
+
+                                    </th>
+
+                                    <th width="90">
+
+                                        Lượt xem
+
+                                    </th>
+
+                                    <th width="170">
+
+                                        Thao tác
+
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="tableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/utils.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
